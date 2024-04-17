@@ -1,0 +1,39 @@
+1- SELECT first_name, last_name FROM actors
+     INTERSECT
+     SELECT first_name, last_name FROM directors
+
+2- SELECT first_name, last_name FROM actors
+     EXCEPT
+     SELECT first_name, last_name FROM directors
+
+3- SELECT first_name, last_name FROM actors
+     UNION
+     SELECT first_name, last_name FROM directors
+
+4- SELECT movies.name
+     FROM movies JOIN 
+		(SELECT movies.id FROM movies
+		EXCEPT
+		SELECT movies_directors.movie_id FROM movies_directors) AS B on movies.id = B.id
+					
+
+5- SELECT actors.first_name, actors.last_name
+     FROM actors
+
+     EXCEPT
+
+     SELECT actors.first_name, actors.last_name
+     FROM actors JOIN 
+		(SELECT actor_id, COUNT(movie_id) AS qtd
+		 FROM roles
+		 GROUP BY actor_id)
+	 	AS tabelaNova ON actors.id = tabelaNova.actor_id
+     WHERE tabelaNova.qtd > 1
+
+6- SELECT movies_genres.genre, movies.year, qtd
+     FROM (movies JOIN movies_genres ON id = movie_id) JOIN
+		(SELECT movie_id, COUNT(actor_id) AS qtd
+		 FROM roles
+		 GROUP BY movie_id) 
+		AS tab2 ON movies_genres.movie_id = tab2.movie_id
+      WHERE qtd < 2

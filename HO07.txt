@@ -1,0 +1,22 @@
+1- SELECT first_name, last_name FROM actors WHERE gender = 'F'
+
+2- SELECT name FROM movies WHERE year > 1999
+
+3- SELECT movies.name, directors.first_name, directors.last_name
+     FROM (movies JOIN movies_directors ON id = movie_id) JOIN directors ON directors.id = director_id
+
+4- SELECT movies.name, actors.first_name, roles.role
+     FROM (roles JOIN movies ON roles.movie_id = movies.id) JOIN actors ON actor_id = actors.id
+     WHERE movies.rank > 6
+
+5- SELECT directors.first_name, COUNT(movie_id) AS qtd
+     FROM directors JOIN movies_directors ON id = director_id
+     GROUP BY directors.first_name
+
+6- SELECT genre, COUNT(movie_id) AS qtd
+     FROM movies_genres
+     GROUP BY genre
+
+7- SELECT movies_genres.genre, AVG(rank) AS media, MIN(rank) AS menor, MAX(rank) AS maior
+     FROM movies JOIN movies_genres ON movies.id = movies_genres.movie_id
+     GROUP BY movies_genres.genre

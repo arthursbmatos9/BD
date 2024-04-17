@@ -1,0 +1,43 @@
+1- Um SBD (sistema de banco de dados) é uma coleção de dados relacionados que estão organizados de certa maneira.
+
+2- Um SBD é composto pelos dados, sua estrutura lógica e de um SGBD (sistema gerenciador de banco de dados), o software que manipula as informações que estão armazenadas.
+
+3- A interação com o SBD é feita por meio do SGBD, utilizando algum software que consegue manipular o banco de dados para realizar as mudanças desejadas.
+
+4- Um banco de dados é um conjunto de dados, que estão estruturados/organizados. O site da amazon disponibiliza vários bancos de dados gratuitos de forma online, no link https://aws.amazon.com/pt/free/database/ 
+
+5- Finalidade: um propósito bem definido. Realidade: para representar o mundo real. Coerência: para manter a coerência lógica da coleção. Compartilhamento: que provêm do compartilhamento de dados.
+
+6- Primeiro, é necessário entender a finalidade do banco de dados, fazer uma análise dos requisitos. Após isso, é a hora de modelar, descrever quais são as entidades e seus atributos e possíveis relacionamentos. Depois, a escolha do SGBD é feita para poder realizar a construção do BD.
+
+7- Um SGBD (sistema gerenciador de banco de dados) é o software que realiza a interação do usuário com o banco de dados, realizando todas as mudanças por meio de uma interface. Permitem a criação e manutenção dos BDs.
+
+8- Definir: especificar tipos, estruturas e restrições que são armazenadas. Contruir: armazenar dados em meio controlado pelo SGBD. Manipular: inserção, remoção, acesso e modificação de dados. Compartilhar: possibilidade de acesso simultâneo a vários usuários.
+
+9- Caso a quantidade de dados a serem armazenados seja baixa, não há necessidade de utilizar um SGBD. Também pode ser inadequado caso haja grande necessidade de alterações a todo tempo, sobrecarregando o SGBD.
+
+10- O modelo de dados é a estrutura lógica em que os dados estão organizados. Exemplo: matriz.
+
+11- Modelo conceitual, modelo lógico e modelo físico.
+
+12- Um esquema de banco de dados é a descrição de sua estrutura e organização, utilizando uma linguagem formal.
+
+13- Uma instância de um banco de dados é uma ocorrência específica do BD em um determinado tempo. 
+
+14- Uma das vantagens da Arquitetura de Três Esquemas é sua flexibilidade, ela permite diferentes visões dos dados para diferentes tipos de pessoas que acessam o BD. Outra vantagem é a independência de dados, ou seja, uma mudança feita em um nível não afeta outro. Ela também é bastante segura, visto que permite o controle da visualização dos dados, possibilitando ou restringindo a visualização dos dados por diferentes tipos de usuários.
+
+15- São 3 níveis: externo, conceitual e interno.
+
+16- O mapeamento refere-se a relacionar e traduzir os elementos de um nível a outro na Arquitetura de Três Esquemas.
+
+17- A Independência de Dados refere-se à capacidade de realizar alterações em um nível do BD sem afetar os outros níveis. Ela é importante pois possibilita uma flexibilidade ao BD, além de facilitar sua manutenção quando necessária.
+
+18- É uma linguagem ou conjunto de instruções que foram projetadas para realizar consultas/manipulações em banco de dados.
+
+19- DDL (Data Definition Language) : Linguagem de definição de dados. 
+DML (Data Manipulation language): Linguagem de manipulação de dados. 
+DQL (Data Query Language): Linguagem de consulta de dados. 
+DCL (Data Control Language): Linguagem de controle de dados
+DTL (Data Transaction Language): Linguagem Transação de dados
+
+

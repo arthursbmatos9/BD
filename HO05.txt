@@ -1,0 +1,31 @@
+1- A = π first_name,  last_name(actors)
+     B = π first_name,  last_name(directors)
+     π first_name, last_name(A ∩ B)
+
+2- A = π first_name, last_name (actors)
+     B = π first_name, last_name (directors)
+     π first_name, last_name (A - B)
+
+3-A = π first_name, last_name (actors)
+    B = π first_name, last_name (directors)
+    π first_name, last_name (A ∪ B)
+
+4- A = (directors)⨝id = director_id (movies_directors)
+     B = π director_id, movie_id (A)
+     C = movies_directors - B
+     D = (movies)⨝id = movie_id (C)
+     π name (D)
+
+5- A = γ actor_id; count(movie_id) -> qtdFPA (roles)
+     B = π actor_id (A) -- selecionando apenas o ID dos atores
+     C = π actor_id (σ qtdFPA > 2 (A)) -- ID dos atores mais de 2 filmes
+     D = B - C
+     E = (actors)⨝id = actor_id (D)
+     π first_name, last_name (E)
+
+6- A = γ movie_id; count(actor_id) -> qtdAtor_Filme (roles)
+     B = σ qtdAtor_Filme < 2 (A)
+     C = (movies)⨝ id = movie_id (B)
+     D = (movies_genres)⨝ movie_id = movies.id (C)
+     π movies_genres.genre, movies.year, qtdAtor_Filme (D)
+
