@@ -1,0 +1,30 @@
+1-
+SELECT A.CPF, A.Nome
+FROM Funcionarios A 
+EXCEPT
+SELECT B.CPF, B.Nome
+FROM Funcionarios B JOIN Cliente C ON B.CPF_Supervisor = C.CPF
+
+2-
+SELECT A.CodFilme, B.Nome
+FROM Midias A, Filmes B
+WHERE A.CodFilme = B.Codigo AND A.Tipo = "DVD"
+UNION
+SELECT A.CodFilme, B.Nome
+FROM Midias A, Filmes B
+WHERE A.CodFilme = B.Codigo AND A.Tipo = "VHS"
+
+3-
+SELECT A.CPF_Cliente, A.ID_Midia, A.DataLocacao
+FROM Aluguel A JOIN Clientes B ON A.CPF_Cliente = B.CPF 
+		JOIN (SELECT C.CPF_Cliente FROM Pagamentos C
+			WHERE C.CPF_Cliente = A.CPF_Cliente
+			UNION
+			SELECT C.CPF_Cliente FROM Pagamentos C
+			WHERE C.ID_Midia = A.ID_Midia
+			UNION
+			SELECT C.CPF_Cliente FROM Pagamentos C
+			WHERE C.DataLocacao = A.DataLocacao) D
+		ON A.CPF_Cliente = D.CPF_Cliente
+WHERE B.Sexo != "F"
+
