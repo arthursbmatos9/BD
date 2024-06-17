@@ -1,0 +1,6 @@
+1) Não é completo. Apesar de todas as operações de todas as transações estarem presentes e com ordem preservada, as relações de conflito existentes não precedem ou sucedem umas as outras. Exemplo: existe o conflito r2(y) - w3(y) e também r3(z) - w2(z).
+
+2) Não é recuperável, pois existe uma leitura suja. Seguindo a ordem de commit: C2, C3, C1, encontra-se a leitura suja w1(x) - r3(x). A terceira transação está lendo um item da transação 1 que ainda não foi confirmado.
+
+3) Não é serializável, porque existem ciclos ao desenhar o grafo de conflitos.
+
