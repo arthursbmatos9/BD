@@ -1,0 +1,55 @@
+INSERT INTO Loja (CNPJ, NomeFantasia, Logradouro) VALUES
+('12345678000199', 'Loja A', 'Rua A, 100'),
+('98765432000188', 'Loja B', 'Avenida B, 200'),
+('19283746000177', 'Loja C', 'Travessa C, 300'),
+('56473829000166', 'Loja D', 'Rua D, 400'),
+('38475612000155', 'Loja E', 'Avenida E, 500');
+
+INSERT INTO Departamento (ID, Nome, Loja_CNPJ) VALUES
+(1, 'Vendas', '12345678000199'),
+(2, 'Compras', '98765432000188'),
+(3, 'Financeiro', '19283746000177'),
+(4, 'RH', '56473829000166'),
+(5, 'TI', '38475612000155');
+
+INSERT INTO Funcionario (ID, Nome, Email, Telefone, Salario, Departamento_ID) VALUES
+(1, 'Carlos Silva', 'carlos@empresa.com', '11987654321', 3000.00, 1),
+(2, 'Ana Souza', 'ana@empresa.com', '11976543210', 3200.00, 2),
+(3, 'João Lima', 'joao@empresa.com', '11965432109', 2800.00, 3),
+(4, 'Maria Oliveira', 'maria@empresa.com', '11954321098', 3500.00, 4),
+(5, 'Pedro Santos', 'pedro@empresa.com', '11943210987', 4000.00, 5);
+
+INSERT INTO Dependente (ID, Nome, Parentesco, Funcionario_ID) VALUES
+(1, 'Lucas Silva', 'Filho', 1),
+(2, 'Beatriz Souza', 'Filha', 2),
+(3, 'Miguel Lima', 'Filho', 3),
+(4, 'Fernanda Oliveira', 'Filha', 4),
+(5, 'Matheus Santos', 'Filho', 5);
+
+INSERT INTO Veiculo (Placa, Marca, Modelo, Cor, Ano, PrecoDiaria, Loja_CNPJ) VALUES
+('ABC1234', 'Ford', 'Ka', 'Preto', 2020, 100.00, '12345678000199'),
+('DEF5678', 'Chevrolet', 'Onix', 'Branco', 2019, 120.00, '98765432000188'),
+('GHI9101', 'Toyota', 'Corolla', 'Prata', 2021, 150.00, '19283746000177'),
+('JKL1121', 'Honda', 'Civic', 'Azul', 2018, 130.00, '56473829000166'),
+('MNO3141', 'Hyundai', 'HB20', 'Vermelho', 2022, 140.00, '38475612000155');
+
+INSERT INTO Cliente (CPF, Nome, Email, Telefone) VALUES
+('12345678901', 'Fernando Almeida', 'fernando@cliente.com', '11987654322'),
+('98765432109', 'Juliana Ferreira', 'juliana@cliente.com', '11976543211'),
+('19283746550', 'Ricardo Melo', 'ricardo@cliente.com', '11965432110'),
+('56473829188', 'Patricia Santos', 'patricia@cliente.com', '11954321099'),
+('38475612277', 'Marcos Lima', 'marcos@cliente.com', '11943210988');
+
+INSERT INTO Aluguel (ID, DataInicio, DataFim, Cliente_CPF, Veiculo_Placa) VALUES
+(1, '2024-06-01 08:00:00', '2024-06-05 18:00:00', '12345678901', 'ABC1234'),
+(2, '2024-07-10 09:00:00', '2024-07-15 20:00:00', '98765432109', 'DEF5678'),
+(3, '2024-08-15 10:00:00', '2024-08-20 21:00:00', '19283746550', 'GHI9101'),
+(4, '2024-09-20 11:00:00', '2024-09-25 22:00:00', '56473829188', 'JKL1121'),
+(5, '2024-10-25 12:00:00', '2024-10-30 23:00:00', '38475612277', 'MNO3141');
+
+INSERT INTO Pagamento (ID, ValorTotal, Tipo, Status, Data, Loja_CNPJ, Cliente_CPF) VALUES
+(1, 500.00, 'Cartão', 'Pago', '2024-06-05 18:00:00', '12345678000199', '12345678901'),
+(2, 600.00, 'Boleto', 'Pago', '2024-07-15 20:00:00', '98765432000188', '98765432109'),
+(3, 750.00, 'Cartão', 'Pago', '2024-08-20 21:00:00', '19283746000177', '19283746550'),
+(4, 650.00, 'Dinheiro', 'Pago', '2024-09-25 22:00:00', '56473829000166', '56473829188'),
+(5, 700.00, 'Cartão', 'Pago', '2024-10-30 23:00:00', '38475612000155', '38475612277');
